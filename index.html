@@ -1,0 +1,58 @@
+﻿<html>
+<body>
+<img src="Chrysanthemum.jpg" id="qw2" width="600" height="400">
+<button onclick="f1()" style="position:absolute;top:54%;left:1%;">Назад</button>
+<button onclick="f2()" style="position:absolute;top:54%;left:5%;">Вперед</button>
+<button id="qw1w" >Chysanthemum</button>
+</body>
+<script>
+var Imgmass=["Chrysanthemum.jpg","Desert.jpg","Hydrangeas.jpg","Jellyfish.jpg","Koala.jpg","Lighthouse.jpg","Penguins.jpg","Tulips.jpg"];
+var nameimg=["Chrysanthemum","Desert","Hydrangeas","Jellyfish","Koala","Lighthouse","Penguins","Tulips"];
+var index=0;
+function f1()
+{
+	var textq=document.getElementById("qw1w");
+	var image=document.getElementById("qw2");
+	if (index != 0 && index>0)
+	{
+
+		index-=1;
+		textq.text=nameimg[index]
+		image.src=Imgmass[index];
+		image.width=600
+		image.height=400
+		
+	}
+	else
+	{
+		index=Imgmass.length-1;
+		image.src=Imgmass[index];
+		image.width=600
+		image.height=400
+		textq.text=nameimg[index]
+	}
+}
+function f2()
+{
+	var image=document.getElementById("qw2");
+	var textq=document.getElementById("qw1w");
+	if (index!=Imgmass.length-1 && index<Imgmass.length-1)
+	{	
+		
+		index+=1;
+		image.src=Imgmass[index];
+		image.width=600
+		image.height=400
+		textq.text=nameimg[index]
+	}
+	else
+	{
+	
+	image.src=Imgmass[index=0];
+	image.width=600
+	image.height=400
+	textq.text=nameimg[index]
+	}
+}
+</script>
+</html>
